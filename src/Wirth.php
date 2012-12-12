@@ -18,7 +18,7 @@ class Wirth {
 		$results = array();
 		foreach ($previous_case as $string) {
 			foreach (self::$alphabet as $new_char) {
-				if (self::can_concat($string, $new_char)) {
+				if (self::can_concat($string, $new_char, $n)) {
 					$results []= $string . $new_char;
 				}
 			}
@@ -29,20 +29,21 @@ class Wirth {
 
 	private static function can_concat(
 		$string, 
-		$new_char
+		$new_char,
+		$n
 	) {
-		return self::is_valid_string($string . $new_char);
+		return self::is_valid_string($string . $new_char, $n);
 	}
 
 	private static function is_valid_string(
-		$string
+		$string,
+		$n
 	) {
-		$length = strlen($string);
-		for ($i = 1; $i <= $length / 2; $i++) {
-			$pos1 = $length - 1;
-			$pos2 = $length - $i - 1;
+		for ($i = 1; $i <= $n / 2; $i++) {
+			$pos1 = $n - 1;
+			$pos2 = $n - $i - 1;
 			$equals = true;
-			while ($equals && $pos1 >= $length - $i) {
+			while ($equals && $pos1 >= $n - $i) {
 				if ($string[$pos1] != $string[$pos2]) {
 					$equals = false;
 				}
