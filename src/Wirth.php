@@ -4,9 +4,16 @@ class Wirth {
 
 	private static $alphabet = array("A", "B", "C");
 
+	private static $cache = array(
+		1 => array("A", "B", "C")
+	);
+
 	public static function getStrings(
 		$n
 	) {
+		if (isset(self::$cache[$n])) {
+			return self::$cache[$n];
+		}
 		if ($n == 1) {
 			return self::$alphabet;
 		} else {
@@ -19,6 +26,7 @@ class Wirth {
 					}
 				}
 			}
+			self::$cache[$n] = $results;
 			return $results;
 		}
 	}
