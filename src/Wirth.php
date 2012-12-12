@@ -10,11 +10,11 @@ class Wirth {
 		if ($n == 1) {
 			return self::$alphabet;
 		} else {
-			$previous_case = self::$alphabet;
+			$previous_case = self::getStrings($n - 1);
 			$results = array();
 			foreach ($previous_case as $string) {
 				foreach (self::$alphabet as $new_char) {
-					if ($new_char != $string[0]) {
+					if ($new_char != $string[strlen($string)-1]) {
 						$results []= $string . $new_char;
 					}
 				}
