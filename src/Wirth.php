@@ -27,7 +27,13 @@ class Wirth {
 		$string, 
 		$new_char
 	) {
-		$new_string = $string . $new_char;
+		return self::is_valid_string($string . $new_char, $string);
+	}
+
+	private static function is_valid_string(
+		$new_string,
+		$string
+	) {
 		$length = strlen($string);
 		for ($i = 1; $i <= $length / 2 + 1; $i++) {
 			if (self::ends_with($new_string, substr($string, $length - 2 * $i + 1, $i))) {
