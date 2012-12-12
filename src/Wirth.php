@@ -27,7 +27,8 @@ class Wirth {
 		$string, 
 		$new_char
 	) {
-		return ($new_char != $string[strlen($string)-1]);
+		return ($new_char != $string[strlen($string)-1]
+			&& substr($string, strlen($string)-3, 2) != $string[strlen($string)-1].$new_char);
 	}
 
 }
