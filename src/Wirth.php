@@ -36,7 +36,7 @@ class Wirth {
 		$length = strlen($string);
 		for ($i = 1; $i <= $length / 2; $i++) {
 			$suffix = substr($string, $length - 2 * $i, $i);
-			if (substr($string, strlen($string) - strlen($suffix)) == $suffix) {
+			if (substr($string, $length - $i) == $suffix) {
 				return false;
 			}
 		}
