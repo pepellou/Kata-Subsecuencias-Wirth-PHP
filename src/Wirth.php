@@ -39,19 +39,21 @@ class Wirth {
 	) {
 		$length = strlen($string);
 		for ($i = 1; $i <= $length / 2; $i++) {
-			$suffix = substr($string, $length - 2 * $i, $i);
-			if (substr($string, $length - $i) == $suffix) {
+			$pos1 = $length - 1;
+			$pos2 = $length - $i - 1;
+			$equals = true;
+			while ($equals && $pos1 >= $length - $i) {
+				if ($string[$pos1] != $string[$pos2]) {
+					$equals = false;
+				}
+				$pos1--;
+				$pos2--;
+			}
+			if ($equals) {
 				return false;
 			}
 		}
 		return true;
-	}
-
-	private static function ends_with(
-		$string,
-		$suffix
-	) {
-		return substr($string, strlen($string) - strlen($suffix)) == $suffix;
 	}
 
 }
