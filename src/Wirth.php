@@ -14,13 +14,20 @@ class Wirth {
 			$results = array();
 			foreach ($previous_case as $string) {
 				foreach (self::$alphabet as $new_char) {
-					if ($new_char != $string[strlen($string)-1]) {
+					if (self::can_concat($string, $new_char)) {
 						$results []= $string . $new_char;
 					}
 				}
 			}
 			return $results;
 		}
+	}
+
+	private static function can_concat(
+		$string, 
+		$new_char
+	) {
+		return ($new_char != $string[strlen($string)-1]);
 	}
 
 }
