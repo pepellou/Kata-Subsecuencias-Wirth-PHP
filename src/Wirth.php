@@ -27,12 +27,11 @@ class Wirth {
 		$string, 
 		$new_char
 	) {
-		return self::is_valid_string($string . $new_char, $string);
+		return self::is_valid_string($string . $new_char);
 	}
 
 	private static function is_valid_string(
-		$new_string,
-		$string
+		$new_string
 	) {
 		$length = strlen($new_string) - 1;
 		for ($i = 1; $i <= ($length + 1) / 2; $i++) {
