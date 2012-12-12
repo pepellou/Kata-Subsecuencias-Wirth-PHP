@@ -28,9 +28,10 @@ class Wirth {
 		$new_char
 	) {
 		$new_string = $string . $new_char;
-		return (!self::ends_with($new_string, substr($string, strlen($string)-1))
-			&& !self::ends_with($new_string, substr($string, strlen($string)-3, 2))
-			&& !self::ends_with($new_string, substr($string, strlen($string)-5, 3)));
+		$length = strlen($string);
+		return (!self::ends_with($new_string, substr($string, $length-1))
+			&& !self::ends_with($new_string, substr($string, $length-3, 2))
+			&& !self::ends_with($new_string, substr($string, $length-5, 3)));
 	}
 
 	private static function ends_with(
