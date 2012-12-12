@@ -29,7 +29,7 @@ class Wirth {
 	) {
 		$new_string = $string . $new_char;
 		$length = strlen($string);
-		return (!self::ends_with($new_string, substr($string, $length-1))
+		return (!self::ends_with($new_string, substr($string, $length-1, 1))
 			&& !self::ends_with($new_string, substr($string, $length-3, 2))
 			&& !self::ends_with($new_string, substr($string, $length-5, 3)));
 	}
