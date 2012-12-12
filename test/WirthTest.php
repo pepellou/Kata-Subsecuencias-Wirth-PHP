@@ -12,4 +12,16 @@ class WirthTest extends PHPUnit_Framework_TestCase {
 		);
 	}
 
+	public function test_it_solves_n_eql_2(
+	) {
+		$this->assertEquals(
+			array( 
+				"AB", "AC", 
+				"BA", "BC",
+				"CA", "CB"
+			),
+			Wirth::getStrings(2)
+		);
+	}
+
 }
