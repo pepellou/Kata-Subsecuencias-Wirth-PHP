@@ -28,7 +28,14 @@ class Wirth {
 		$new_char
 	) {
 		return ($new_char != $string[strlen($string)-1]
-			&& substr($string, strlen($string)-3, 2) != $string[strlen($string)-1].$new_char);
+			&& !self::ends_with($string . $new_char, substr($string, strlen($string)-3, 2)));
+	}
+
+	private static function ends_with(
+		$string,
+		$suffix
+	) {
+		return substr($string, strlen($string) - strlen($suffix)) == $suffix;
 	}
 
 }
