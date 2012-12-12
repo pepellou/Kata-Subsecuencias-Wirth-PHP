@@ -95,6 +95,31 @@ class WirthTest extends PHPUnit_Framework_TestCase {
 		$this->assertEquals(342, count(Wirth::getStrings(13)));
 		$this->assertEquals(456, count(Wirth::getStrings(14)));
 		$this->assertEquals(618, count(Wirth::getStrings(15)));
+		$this->assertEquals(798, count(Wirth::getStrings(16)));
+		$this->assertEquals(1044, count(Wirth::getStrings(17)));
+		$this->assertEquals(1392, count(Wirth::getStrings(18)));
+		$this->assertEquals(1830, count(Wirth::getStrings(19)));
+		$this->assertEquals(2388, count(Wirth::getStrings(20)));
+		$this->assertEquals(3180, count(Wirth::getStrings(21)));
+		$this->assertEquals(4146, count(Wirth::getStrings(22)));
+		$this->assertEquals(5418, count(Wirth::getStrings(23)));
+		$this->assertEquals(7032, count(Wirth::getStrings(24)));
+		$this->assertEquals(9198, count(Wirth::getStrings(25)));
+		$this->assertEquals(11892, count(Wirth::getStrings(26)));
+		$this->assertEquals(15486, count(Wirth::getStrings(27)));
+		$this->assertEquals(20220, count(Wirth::getStrings(28)));
+		$this->assertEquals(26424, count(Wirth::getStrings(29)));
+		$this->assertEquals(34422, count(Wirth::getStrings(30)));
+		$this->assertEquals(44862, count(Wirth::getStrings(31)));
+		$this->assertEquals(58446, count(Wirth::getStrings(32)));
+		$this->assertEquals(76122, count(Wirth::getStrings(33)));
+		$this->assertEquals(99276, count(Wirth::getStrings(34)));
+		$this->assertEquals(129516, count(Wirth::getStrings(35)));
+		$this->assertEquals(168546, count(Wirth::getStrings(36)));
+		$this->assertEquals(219516, count(Wirth::getStrings(37)));
+		$this->assertEquals(285750, count(Wirth::getStrings(38)));
+		$this->assertEquals(372204, count(Wirth::getStrings(39)));
+		$this->assertEquals(484446, count(Wirth::getStrings(40)));
 	}
 
 }
