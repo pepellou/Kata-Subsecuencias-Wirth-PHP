@@ -35,7 +35,8 @@ class Wirth {
 	) {
 		$length = strlen($string);
 		for ($i = 1; $i <= $length / 2; $i++) {
-			if (self::ends_with($string, substr($string, $length - 2 * $i, $i))) {
+			$suffix = substr($string, $length - 2 * $i, $i);
+			if (substr($string, strlen($string) - strlen($suffix)) == $suffix) {
 				return false;
 			}
 		}
