@@ -78,4 +78,23 @@ class WirthTest extends PHPUnit_Framework_TestCase {
 		);
 	}
 
+	public function test_number_of_results(
+	) {
+		$this->assertEquals(3, count(Wirth::getStrings(1)));
+		$this->assertEquals(6, count(Wirth::getStrings(2)));
+		$this->assertEquals(12, count(Wirth::getStrings(3)));
+		$this->assertEquals(18, count(Wirth::getStrings(4)));
+		$this->assertEquals(30, count(Wirth::getStrings(5)));
+		$this->assertEquals(42, count(Wirth::getStrings(6)));
+		$this->assertEquals(60, count(Wirth::getStrings(7)));
+		$this->assertEquals(78, count(Wirth::getStrings(8)));
+		$this->assertEquals(108, count(Wirth::getStrings(9)));
+		$this->assertEquals(144, count(Wirth::getStrings(10)));
+		$this->assertEquals(204, count(Wirth::getStrings(11)));
+		$this->assertEquals(264, count(Wirth::getStrings(12)));
+		$this->assertEquals(342, count(Wirth::getStrings(13)));
+		$this->assertEquals(456, count(Wirth::getStrings(14)));
+		$this->assertEquals(618, count(Wirth::getStrings(15)));
+	}
+
 }
