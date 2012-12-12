@@ -62,4 +62,20 @@ class WirthTest extends PHPUnit_Framework_TestCase {
 		);
 	}
 
+	public function test_it_solves_n_eql_6(
+	) {
+		$this->assertEquals(
+			array( 
+				"ABACAB", "ABACBA", "ABACBC", "ABCABA", "ABCACB", "ABCBAB", 
+				"ABCBAC", "ACABAC", "ACABCA", "ACABCB", "ACBABC", "ACBACA", 
+				"ACBCAB", "ACBCAC", "BABCAB", "BABCAC", "BABCBA", "BACABA", 
+				"BACABC", "BACBAB", "BACBCA", "BCABAC", "BCABCB", "BCACBA",
+				"BCACBC", "BCBABC", "BCBACA", "BCBACB", "CABACA", "CABACB", 
+				"CABCAC", "CABCBA", "CACBAB", "CACBAC", "CACBCA", "CBABCA", 
+				"CBABCB", "CBACAB", "CBACBC", "CBCABA", "CBCABC", "CBCACB"
+			),
+			Wirth::getStrings(6)
+		);
+	}
+
 }
