@@ -34,7 +34,7 @@ class Wirth {
 		$new_string,
 		$string
 	) {
-		$length = strlen($string);
+		$length = strlen($new_string) - 1;
 		for ($i = 1; $i <= $length / 2 + 1; $i++) {
 			if (self::ends_with($new_string, substr($string, $length - 2 * $i + 1, $i))) {
 				return false;
