@@ -29,14 +29,10 @@ class Wirth {
 	) {
 		$new_string = $string . $new_char;
 		$length = strlen($string);
-		if (self::ends_with($new_string, substr($string, $length-1, 1))) {
-			return false;
-		}
-		if (self::ends_with($new_string, substr($string, $length-3, 2))) {
-			return false;
-		}
-		if (self::ends_with($new_string, substr($string, $length-5, 3))) {
-			return false;
+		for ($i = 1; $i <= 3; $i++) {
+			if (self::ends_with($new_string, substr($string, $length - 2 * $i + 1, $i))) {
+				return false;
+			}
 		}
 		return true;
 	}
