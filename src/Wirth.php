@@ -31,11 +31,11 @@ class Wirth {
 	}
 
 	private static function is_valid_string(
-		$new_string
+		$string
 	) {
-		$length = strlen($new_string) - 1;
+		$length = strlen($string) - 1;
 		for ($i = 1; $i <= ($length + 1) / 2; $i++) {
-			if (self::ends_with($new_string, substr($new_string, $length - 2 * $i + 1, $i))) {
+			if (self::ends_with($string, substr($string, $length - 2 * $i + 1, $i))) {
 				return false;
 			}
 		}
