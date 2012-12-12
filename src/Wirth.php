@@ -33,9 +33,9 @@ class Wirth {
 	private static function is_valid_string(
 		$string
 	) {
-		$length = strlen($string) - 1;
-		for ($i = 1; $i <= ($length + 1) / 2; $i++) {
-			if (self::ends_with($string, substr($string, $length - 2 * $i + 1, $i))) {
+		$length = strlen($string);
+		for ($i = 1; $i <= $length / 2; $i++) {
+			if (self::ends_with($string, substr($string, $length - 2 * $i, $i))) {
 				return false;
 			}
 		}
