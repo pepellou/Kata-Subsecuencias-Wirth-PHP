@@ -14,21 +14,17 @@ class Wirth {
 		if (isset(self::$cache[$n])) {
 			return self::$cache[$n];
 		}
-		if ($n == 1) {
-			return self::$alphabet;
-		} else {
-			$previous_case = self::getStrings($n - 1);
-			$results = array();
-			foreach ($previous_case as $string) {
-				foreach (self::$alphabet as $new_char) {
-					if (self::can_concat($string, $new_char)) {
-						$results []= $string . $new_char;
-					}
+		$previous_case = self::getStrings($n - 1);
+		$results = array();
+		foreach ($previous_case as $string) {
+			foreach (self::$alphabet as $new_char) {
+				if (self::can_concat($string, $new_char)) {
+					$results []= $string . $new_char;
 				}
 			}
-			self::$cache[$n] = $results;
-			return $results;
 		}
+		self::$cache[$n] = $results;
+		return $results;
 	}
 
 	private static function can_concat(
